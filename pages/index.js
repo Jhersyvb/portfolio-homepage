@@ -5,6 +5,7 @@ import {
   Image,
   useColorModeValue
 } from '@chakra-ui/react'
+import Section from '../components/section'
 
 function Page() {
   return (
@@ -26,20 +27,30 @@ function Page() {
           </Heading>
           <p>Designer / FrontEnd / BackEnd</p>
         </Box>
+        <Box
+          flexShrink={0}
+          mt={{ base: 4, md: 0 }}
+          ml={{ md: 6 }}
+          align="center"
+        >
+          <Image
+            src="/images/jhersy.jpg"
+            borderColor="whiteAlpha.800"
+            borderWidth={2}
+            borderStyle="solid"
+            maxWidth="100px"
+            display="inline-block"
+            borderRadius="full"
+            alt="Profile Image"
+          />
+        </Box>
       </Box>
-
-      <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} align="center">
-        <Image
-          src="/images/jhersy.jpg"
-          borderColor="whiteAlpha.800"
-          borderWidth={2}
-          borderStyle="solid"
-          maxWidth="100px"
-          display="inline-block"
-          borderRadius="full"
-          alt="Profile Image"
-        />
-      </Box>
+      <Section delay={0.1}>
+        <Heading as="h3" variant="section-title">
+          Work
+        </Heading>
+        <p>Paragraph</p>
+      </Section>
     </Container>
   )
 }
