@@ -1,10 +1,16 @@
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import {
   Container,
   Box,
   Heading,
   Image,
-  useColorModeValue
+  useColorModeValue,
+  Link,
+  Button
 } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { BioSection, BioYear } from '../components/bio'
+import Paragraph from '../components/paragraph'
 import Section from '../components/section'
 
 function Page() {
@@ -45,11 +51,52 @@ function Page() {
           />
         </Box>
       </Box>
+
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
           Work
         </Heading>
-        <p>Paragraph</p>
+        <Paragraph>
+          Jhersy is a FullStack developer with passion for building apps and
+          digital services{' '}
+          <NextLink href="https://github.com/jhersyvb" passHref>
+            <Link>Github</Link>
+          </NextLink>
+          .
+        </Paragraph>
+        <Box align="center" my={4}>
+          <NextLink href="/works" passHref>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              My Portfolio
+            </Button>
+          </NextLink>
+        </Box>
+      </Section>
+
+      <Section delay={0.2}>
+        <Heading as="h3" variant="section-title">
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>1990</BioYear>
+          Born in Huánuco, Perú.
+        </BioSection>
+        <BioSection>
+          <BioYear>2012</BioYear>
+          Completed the program Systems Engineering in Hermilio Valdizan
+          University.
+        </BioSection>
+        <BioSection>
+          <BioYear>2016-present</BioYear>
+          Works at NOVA SYSTEM
+        </BioSection>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          I ♥
+        </Heading>
+        <Paragraph>Drawing, Music and Watching series and movies</Paragraph>
       </Section>
     </Container>
   )
