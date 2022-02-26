@@ -6,13 +6,22 @@ import {
   Image,
   useColorModeValue,
   Link,
-  Button
+  Button,
+  SimpleGrid,
+  List,
+  ListItem,
+  Icon
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { BioSection, BioYear } from '../components/bio'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
+import { GridItem } from '../components/grid-item'
+import { IoLogoFacebook, IoLogoTwitter, IoLogoGithub } from 'react-icons/io5'
+
+import thumbTwitterClone from '../public/images/works/twitter-clone.png'
+import thumbLinkedInClone from '../public/images/works/linkedin-clone.png'
 
 function Page() {
   return (
@@ -95,6 +104,64 @@ function Page() {
             I ♥
           </Heading>
           <Paragraph>Drawing, Music and Watching series and movies</Paragraph>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/jhersyvb" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @jhersyvb
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://twitter.com/jhersyvb" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoTwitter} />}
+                >
+                  @jhersyvb
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://facebook.com/jhersyvb" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoFacebook} />}
+                >
+                  @jhersyvb
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+
+          <SimpleGrid columns={[1, 2, 2]} gap={6}>
+            <GridItem
+              href="https://twitter-clone-jhersyvb.vercel.app"
+              title="Twitter Clone"
+              thumbnail={thumbTwitterClone}
+            >
+              Build using Next.js and Firebase
+            </GridItem>
+            <GridItem
+              href="https://linkedin-clone-jhersyvb.vercel.app"
+              title="LinkedIn Clone"
+              thumbnail={thumbLinkedInClone}
+            >
+              Build with Next.js and MongoDB
+            </GridItem>
+          </SimpleGrid>
         </Section>
       </Container>
     </Layout>
